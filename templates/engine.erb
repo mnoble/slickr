@@ -1,0 +1,30 @@
+$LOAD_PATH << File.expand_path("../../java", __FILE__)
+require "java"
+require "lwjgl.jar"
+require "slick.jar"
+
+java_import org.newdawn.slick.AppGameContainer
+java_import org.newdawn.slick.BasicGame
+java_import org.newdawn.slick.Color
+java_import org.newdawn.slick.GameContainer
+java_import org.newdawn.slick.Graphics
+java_import org.newdawn.slick.Image
+java_import org.newdawn.slick.Input
+
+module <%= module_name %>
+  class Engine < BasicGame
+    def init(container)
+    end
+
+    def update(container, delta)
+    end
+
+    def render(container, graphics)
+    end
+  end
+end
+
+game = AppGameContainer.new(<%= module_name %>::Engine.new("<%= name %>"))
+game.set_display_mode(800, 600, false)
+game.start
+

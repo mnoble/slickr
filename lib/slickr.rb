@@ -1,0 +1,7 @@
+require "fileutils"
+require "pathname"
+require "thor"
+require "active_support/all"
+require "slickr/version"
+require "slickr/cli"
+require "slickr/actions/create"
