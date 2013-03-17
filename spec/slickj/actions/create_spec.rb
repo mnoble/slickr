@@ -18,6 +18,7 @@ describe Slickr::Actions::Create do
     rootdir.join("files").mkpath
 
     # The contents of these don't matter, so just make empty files
+    FileUtils.touch(rootdir.join("files", "Rakefile"))
     FileUtils.touch(rootdir.join("files", "jinput.jar"))
     FileUtils.touch(rootdir.join("files", "lwjgl.jar"))
     FileUtils.touch(rootdir.join("files", "slick.jar"))
