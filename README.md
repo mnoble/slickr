@@ -1,18 +1,47 @@
-# slickr
+# Welcome to Slickr
 
-JRuby Slick2D project generators.
+Slickr is a JRuby, Slick2D, project framework.
 
-## Overview
+Slickr tries to merge concepts from Entity-Component and good old
+fashion Object Oriented Design. Ruby gives you a lot of power to
+write great code and Slickr tries to help you do that, while developing
+games.
 
-The project Slickr sets up is an attempt to merge concepts from
-Entity-Component and just plain old OOP best practices. Ruby gives you 
-a lot of power to write great code and Slickr tries to set you up to do 
-that well.
+"Slick2D is an easy to use set of tools and utilities wrapped around
+LWJGL OpenGL bindings to make 2D Java game development easier." &mdash;
+[http://www.slick2d.org/wiki/index.php/Main_Page](http://www.slick2d.org/wiki/index.php/Main_Page)
 
-Keep things simple. Components should have no knowledge of the Entities
-that will implement them; Systems should not care about what type of
-Entity they're acting on. Basically, watch or read anything Sandi Metz
-says and follow it.
+## Getting Started
+
+1\. Install Slickr
+
+```
+$ gem install slickr
+```
+
+2\. Create a new Slickr game
+
+```
+$ slickr new my_game
+```
+
+where "my_game" is the name of the game.
+
+3\. Change directory to `my_game` and play it
+
+```
+$ cd my_game
+$ rake play
+```
+
+You should see a Window with nothing but a white background and some FPS
+information.
+
+## Generating New Code
+
+```
+$ slickr generate [component|entity|renderer|system] NAME
+```
 
 ## Project Structure
 
@@ -22,62 +51,37 @@ says and follow it.
     │   ├── jinput.jar
     │   ├── lwjgl.jar
     │   └── slick.jar
-    ├── lib
-    │   ├── components
+    ├── lib/
+    │   ├── components/
     │   ├── components.rb
     │   ├── engine.rb
-    │   ├── entities
+    │   ├── entities/
     │   ├── entities.rb
-    │   ├── renderers
+    │   ├── renderers/
     │   ├── renderers.rb
-    │   ├── systems
+    │   ├── systems/
     │   └── systems.rb
     ├── libjinput-osx.jnilib
     ├── liblwjgl.jnilib
     └── openal.dylib
 
-### assets
-
+**assets/**<br/>
 Images, sounds, videos, etc.
 
-### java
-
+**java/**<br/>
 Slick2D framework jars.
 
-### lib
+**lib/components/**<br/>
+Behaviors that entities will include.
 
-Your game code.
+**lib/entities/**<br/>
+The actual objects that live your game's world.
 
-### lib/components
-
-Behaviors that entities will include. These are modules that implement
-whatever behavior the entity should have. A common example will be a
-`Spatial` component that implements `x` and `y` position and movement.
-
-### lib/entities
-
-The actual objects that live your game's world. Entities will implement
-Components and Systems conduct Entities. These will be your Heros,
-Enemies, Bosses, etc.
-
-### lib/renderers
-
+**lib/renderers/**<br/>
 Draws the current state of entities to the screen.
 
-### lib/systems
-
+**lib/systems/**<br/>
 Systems react to changes in the world and update entitites accordingly.
-View these as controllers of sorts. A good example of this is an `Input`
-system. It would react to keyboard events and tell the appropriate
-entities where to move.
-
-## Installation
-
-    $ gem install slickr
-
-## Usage
-
-    $ slickr new PROJECT_NAME
 
 ## Contributing
 
