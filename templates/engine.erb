@@ -11,20 +11,18 @@ java_import org.newdawn.slick.Graphics
 java_import org.newdawn.slick.Image
 java_import org.newdawn.slick.Input
 
-module <%= module_name %>
-  class Engine < BasicGame
-    def init(container)
-    end
+class Engine < BasicGame
+  def init(container)
+  end
 
-    def update(container, delta)
-    end
+  def update(container, delta)
+  end
 
-    def render(container, graphics)
-    end
+  def render(container, graphics)
   end
 end
 
-game = AppGameContainer.new(<%= module_name %>::Engine.new("<%= name %>"))
+game = AppGameContainer.new(Engine.new("<%= name %>"))
 game.set_display_mode(800, 600, false)
 game.start
 
