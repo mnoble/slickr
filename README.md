@@ -1,6 +1,6 @@
 # Welcome to Slickr
-[![Build
-Status](https://travis-ci.org/mnoble/slickr.png?branch=master)](https://travis-ci.org/mnoble/slickr)
+[![Build Status](https://travis-ci.org/mnoble/slickr.png?branch=master)](https://travis-ci.org/mnoble/slickr)
+[![Code Climate](https://codeclimate.com/github/mnoble/slickr.png)](https://codeclimate.com/github/mnoble/slickr)
 
 Slickr is a JRuby, Slick2D, project framework.
 
