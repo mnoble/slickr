@@ -85,6 +85,17 @@ Draws the current state of entities to the screen.
 **lib/systems/**<br/>
 Systems react to changes in the world and update entitites accordingly.
 
+## Packaging with Rawr
+
+Slickr generates a build configuration file for Rawr which allows you to package
+your game as a jar, exe or app.
+
+    gem install rawr --source http://gems.neurogami.com
+    rawr install
+    rake rawr:jar
+    java -jar package/jar/game.jar
+
+
 ## Contributing
 
 1. Fork it
