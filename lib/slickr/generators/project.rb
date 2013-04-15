@@ -30,6 +30,7 @@ module Slickr
         template "renderers.erb",  "lib/renderers.rb"
         template "systems.erb",    "lib/systems.rb"
         template "entities.erb",   "lib/entities.rb"
+        template "build_configuration.erb", "build_configuration.rb"
       end
     end
   end
