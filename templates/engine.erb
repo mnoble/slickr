@@ -3,6 +3,13 @@ require "java"
 require "lwjgl.jar"
 require "slick.jar"
 
+$LOAD_PATH << File.expand_path("../../lib", __FILE__)
+require "entity_manager"
+require "components"
+require "entities"
+require "renderers"
+require "systems"
+
 java_import org.newdawn.slick.AppGameContainer
 java_import org.newdawn.slick.BasicGame
 java_import org.newdawn.slick.Color

@@ -1,0 +1,46 @@
+module EntityManager
+  extend self
+
+  # @!attribute entities
+  #   Hash of entities and their registered components
+  def entities
+    @entities ||= Hash.new { |h,k| h[k] = [] }
+  end
+
+  # Register an +Entity+ as conforming to a specific +Component+
+  # behavior.
+  #
+  # @param entity [Entity] The +Entity+ that includes the behavior
+  # @param type [Module] The +Component+ module that.
+  #
+  def register(entity, type)
+    entities[entity] << symbolize(type)
+  end
+
+  # Retrieve all registered entities that include all of the 
+  # components passed.
+  #
+  # @param components [Array<Component>] List of components
+  #
+  # @example
+  #   EntityManager.entities
+  #   => { #<Entity 0x1> => [:spatial, :size], #<Entity 0x2> => [:spatial] }
+  #
+  #   EntityManager.entities_with(:spatial, :size)
+  #   => #<Entity 0x1>
+  #
+  def entities_with(*components)
+    entities.select { |entity, types| includes_all?(types, components) }.keys
+  end
+
+  private
+
+  def includes_all?(types, items)
+    (types & items).to_set == items.to_set
+  end
+
+  def symbolize(type)
+    type.name.demodulize.underscore.to_sym
+  end
+end
+

@@ -1,6 +1,18 @@
 module Renderers
   class <%= to_object(name) %>
+    attr_accessor :<%= name.underscore %>
 
+    def initialize(<%= name.underscore %>)
+      @<%= name.underscore %> = <%= name.underscore %>
+    end
+
+    def render
+      image.draw(<%= name.underscore %>.x, <%= name.underscore %>.y)
+    end
+
+    def image
+      @image ||= Image.new("assets/<%= name.underscore %>.png", false, Image::FILTER_NEAREST)
+    end
   end
 end
 

@@ -25,11 +25,12 @@ module Slickr
 
         copy_file "Rakefile"
 
-        template "engine.erb",     "lib/engine.rb"
-        template "components.erb", "lib/components.rb"
-        template "renderers.erb",  "lib/renderers.rb"
-        template "systems.erb",    "lib/systems.rb"
-        template "entities.erb",   "lib/entities.rb"
+        template "entity_manager.erb", "lib/entity_manager.rb"
+        template "engine.erb",         "lib/engine.rb"
+        template "components.erb",     "lib/components.rb"
+        template "renderers.erb",      "lib/renderers.rb"
+        template "systems.erb",        "lib/systems.rb"
+        template "entities.erb",       "lib/entities.rb"
       end
     end
   end
