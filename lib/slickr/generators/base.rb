@@ -70,7 +70,7 @@ module Slickr
       # Root of this gem, where the source files live.
       #
       def root
-        @root ||= Pathname.new(__FILE__).join(with_correct_path_seperator("../../../..")).expand_path
+        @root ||= Pathname.new(__FILE__).dirname.expand_path
       end
 
       # Normalizes file paths per OS.
