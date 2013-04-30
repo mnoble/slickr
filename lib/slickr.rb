@@ -14,3 +14,8 @@ require "slickr/generators/system"
 require "slickr/entity_manager"
 require "slickr/entity"
 require "slickr/cli"
+
+module Slickr
+  class SlickrError < StandardError; end
+  class NotImplementedError < SlickrError; end
+end
