@@ -54,15 +54,15 @@ $ slickr generate [component|entity|renderer|system] NAME
     │   ├── lwjgl.jar
     │   └── slick.jar
     ├── lib/
-    │   ├── components/
-    │   ├── components.rb
+    │   ├── behaviors/
+    │   ├── behaviors.rb
     │   ├── engine.rb
     │   ├── entities/
     │   ├── entities.rb
     │   ├── renderers/
     │   ├── renderers.rb
-    │   ├── systems/
-    │   └── systems.rb
+    │   ├── reactors/
+    │   └── reactors.rb
     ├── libjinput-osx.jnilib
     ├── liblwjgl.jnilib
     └── openal.dylib
@@ -73,7 +73,7 @@ Images, sounds, videos, etc.
 **java/**<br/>
 Slick2D framework jars.
 
-**lib/components/**<br/>
+**lib/behaviors/**<br/>
 Behaviors that entities will include.
 
 **lib/entities/**<br/>
@@ -82,8 +82,8 @@ The actual objects that live your game's world.
 **lib/renderers/**<br/>
 Draws the current state of entities to the screen.
 
-**lib/systems/**<br/>
-Systems react to changes in the world and update entitites accordingly.
+**lib/reactors/**<br/>
+Reactors take changes in the world and updates entitites accordingly.
 
 ## Contributing
 
