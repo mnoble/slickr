@@ -13,6 +13,9 @@ require "slickr/generators/renderer"
 require "slickr/generators/system"
 require "slickr/entity_manager"
 require "slickr/entity"
+require "slickr/behavior"
+require "slickr/reactor"
+require "slickr/renderer"
 require "slickr/cli"
 
 module Slickr
