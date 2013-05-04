@@ -11,8 +11,8 @@ module Slickr
         empty_directory "assets"
         empty_directory "lib"
         empty_directory "lib/renderers"
-        empty_directory "lib/components"
-        empty_directory "lib/systems"
+        empty_directory "lib/behaviors"
+        empty_directory "lib/reactors"
         empty_directory "lib/entities"
 
         copy_file "jinput.jar", "java"
@@ -26,9 +26,9 @@ module Slickr
         copy_file "Rakefile"
 
         template "engine.erb", "lib/engine.rb"
-        template "components.erb", "lib/components.rb"
+        template "behaviors.erb", "lib/behaviors.rb"
         template "renderers.erb", "lib/renderers.rb"
-        template "systems.erb", "lib/systems.rb"
+        template "reactors.erb", "lib/reactors.rb"
         template "entities.erb", "lib/entities.rb"
       end
     end

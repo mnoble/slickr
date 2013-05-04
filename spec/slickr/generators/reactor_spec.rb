@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe Slickr::Generators::System do
+describe Slickr::Generators::Reactor do
   let!(:generator) { described_class.new("input") }
 
   before do
@@ -12,6 +12,6 @@ describe Slickr::Generators::System do
   end
 
   it "generates a new system file" do
-    build.join("lib", "systems", "input.rb").should exist
+    build.join("lib", "reactors", "input.rb").should exist
   end
 end

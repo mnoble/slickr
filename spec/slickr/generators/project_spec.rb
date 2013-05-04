@@ -23,12 +23,12 @@ describe Slickr::Generators::Project do
     game.join("lib", "renderers").should be_directory
   end
 
-  it "creates a lib/components directory" do
-    game.join("lib", "components").should be_directory
+  it "creates a lib/behaviors directory" do
+    game.join("lib", "behaviors").should be_directory
   end
 
-  it "creates a lib/systems directory" do
-    game.join("lib", "systems").should be_directory
+  it "creates a lib/reactors directory" do
+    game.join("lib", "reactors").should be_directory
   end
 
   it "creates a lib/entities directory" do
@@ -63,19 +63,19 @@ describe Slickr::Generators::Project do
     game.join("openal.dylib").should exist
   end
 
-  it "creates the components file" do
-    game.join("lib", "components.rb").should exist
+  it "creates the behaviors file" do
+    game.join("lib", "behaviors.rb").should exist
   end
 
   it "creates the renderers file" do
     game.join("lib", "renderers.rb").should exist
   end
 
-  it "creates the systems file" do
-    game.join("lib", "systems.rb").should exist
+  it "creates the reactors file" do
+    game.join("lib", "reactors.rb").should exist
   end
 
-  it "creates the systems file" do
+  it "creates the reactors file" do
     game.join("lib", "entities.rb").should exist
   end
 
@@ -88,10 +88,10 @@ require "slick.jar"
 
 $LOAD_PATH << File.expand_path("../../lib", __FILE__)
 require "entity_manager"
-require "components"
+require "behaviors"
 require "entities"
 require "renderers"
-require "systems"
+require "reactors"
 
 java_import org.newdawn.slick.AppGameContainer
 java_import org.newdawn.slick.BasicGame

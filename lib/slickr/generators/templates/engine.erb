@@ -4,11 +4,10 @@ require "lwjgl.jar"
 require "slick.jar"
 
 $LOAD_PATH << File.expand_path("../../lib", __FILE__)
-require "entity_manager"
-require "components"
+require "behaviors"
 require "entities"
 require "renderers"
-require "systems"
+require "reactors"
 
 java_import org.newdawn.slick.AppGameContainer
 java_import org.newdawn.slick.BasicGame

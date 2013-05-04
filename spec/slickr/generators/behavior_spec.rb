@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe Slickr::Generators::Component do
+describe Slickr::Generators::Behavior do
   let!(:generator) { described_class.new("spatial") }
 
   before do
@@ -12,6 +12,6 @@ describe Slickr::Generators::Component do
   end
 
   it "generates a new component file" do
-    build.join("lib", "components", "spatial.rb").should exist
+    build.join("lib", "behaviors", "spatial.rb").should exist
   end
 end
