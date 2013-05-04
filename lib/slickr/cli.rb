@@ -1,7 +1,9 @@
 module Slickr
   class CLI < Thor
-    register Slickr::Actions::Generate, "generate", "generate GENERATOR [args] [options]", "Generate new code"
-    register Slickr::Actions::Generate, "g", "generate GENERATOR [args] [options]", "Generate new code"
+    desc "generate GENERATOR NAME", "Generate new code"
+    def generate(generator, name)
+      Actions::Generate.start
+    end
 
     desc "new NAME [options]", "Create a new jruby slick2d project"
     def new(name)
