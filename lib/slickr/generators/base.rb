@@ -61,10 +61,6 @@ module Slickr
         file.open("w+") { |f| f << render(template_root(filename)) }
       end
 
-      def to_object(string)
-        string.gsub(" ", "_").camelize
-      end
-
     private
 
       # Root of this gem, where the source files live.

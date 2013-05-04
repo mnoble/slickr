@@ -1,4 +1,4 @@
-class <%= to_object(name) %> < Slickr::Reactor
+class <%= name.classify %> < Slickr::Reactor
   def call(container, delta)
   end
 end
