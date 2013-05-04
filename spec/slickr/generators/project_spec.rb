@@ -87,7 +87,6 @@ require "lwjgl.jar"
 require "slick.jar"
 
 $LOAD_PATH << File.expand_path("../../lib", __FILE__)
-require "entity_manager"
 require "behaviors"
 require "entities"
 require "renderers"
