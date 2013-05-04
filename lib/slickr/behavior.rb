@@ -6,34 +6,33 @@ module Slickr
   # A behavior should not care about what entities use it. It should
   # specify all the attribute and methods relevant to what it does.
   #
-  # @example Behavior that lets entities move within the world
+  #    module Spatiality
+  #      include Slickr::Behavior
   #
-  #   module Spatiality
-  #     include Slickr::Behavior
+  #      attr_access :x, :y, :speed
   #
-  #     attr_access :x, :y, :speed
+  #      def prepare(options={})
+  #        @x = options.fetch(:x, 0)
+  #        @y = options.fetch(:y, 0)
+  #        @speed = options.fetch(:speed, 0)
+  #      end
   #
-  #     def prepare(options={})
-  #       @x = options.fetch(:x, 0)
-  #       @y = options.fetch(:y, 0)
-  #       @speed = options.fetch(:speed, 0)
-  #     end
+  #      def up(delta)
+  #        self.y -= speed * delta
+  #      end
   #
-  #     def up(delta)
-  #       self.y -= speed * delta
-  #     end
+  #      def down(delta)
+  #        self.y += speed * delta
+  #      end
   #
-  #     def down(delta)
-  #       self.y += speed * delta
-  #     end
+  #      def left(delta)
+  #        self.x -= speed * delta
+  #      end
   #
-  #     def left(delta)
-  #       self.x -= speed * delta
-  #     end
-  #
-  #     def right(delta)
-  #       self.x += speed * delta
-  #     end
+  #      def right(delta)
+  #        self.x += speed * delta
+  #      end
+  #    end
   #
   # == Preparing
   #
@@ -45,8 +44,6 @@ module Slickr
   # pushed into the entity's behavior stack. When that entity is
   # instantiated, it will run through all of its behaviors and
   # +prepare+ each one with the options specified in the entity.
-  #
-  # @example
   #
   #   class Hero < Slickr::Entity
   #     use Spatiality, x: 10, y: 10, speed: 0.2
