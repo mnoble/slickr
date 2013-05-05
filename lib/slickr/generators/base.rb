@@ -3,10 +3,12 @@ module Slickr
     class Base
       attr_accessor :name
       attr_accessor :destination
+      attr_reader :logger
 
       def initialize(name)
         @name = name
         @destination = Pathname.new(Dir.pwd)
+        @logger = Slickr::ActionLogger.new
       end
 
       # Create an empty directory at +path+ inside the project.
@@ -17,7 +19,14 @@ module Slickr
       #   empty_directory "lib"
       #
       def empty_directory(path)
-        destination.join(with_correct_path_seperator(path)).mkpath
+        directory = destination.join(with_correct_path_seperator(path))
+
+        if directory.exist?
+          logger.exists(path)
+        else
+          directory.mkpath
+          logger.created(path)
+        end
       end
 
       # Copy a file from ROOT/files to somewhere in the project
@@ -39,6 +48,7 @@ module Slickr
         source = root.join("files", filename)
         dest   = destination.join(path, filename)
         FileUtils.cp(source, dest)
+        logger.created(dest)
       end
 
       # Render an erb template at a specific path within
@@ -59,6 +69,7 @@ module Slickr
         file = lib_file(with_correct_path_seperator(path))
         file.dirname.mkpath
         file.open("w+") { |f| f << render(template_root(filename)) }
+        logger.created(file)
       end
 
     private

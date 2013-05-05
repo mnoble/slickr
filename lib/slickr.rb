@@ -17,6 +17,7 @@ require "slickr/behavior"
 require "slickr/reactor"
 require "slickr/renderer"
 require "slickr/cli"
+require "slickr/action_logger"
 
 module Slickr
   class SlickrError < StandardError; end
