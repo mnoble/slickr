@@ -98,7 +98,7 @@ module Slickr
     end
 
     def symbolize(type)
-      type.name.demodulize.underscore.to_sym
+      type.name.demodulize.underscore.gsub("_behavior", "").to_sym
     end
   end
 end

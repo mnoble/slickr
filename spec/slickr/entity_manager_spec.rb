@@ -4,7 +4,7 @@ describe Slickr::EntityManager do
   let!(:entity) { mock }
 
   before do
-    Slickr::EntityManager.register(entity, (class Spatial; self; end))
+    Slickr::EntityManager.register(entity, (class SpatialBehavior; self; end))
   end
 
   it "registers an entity" do
