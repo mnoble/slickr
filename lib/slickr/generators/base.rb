@@ -47,8 +47,13 @@ module Slickr
       def copy_file(filename, path="")
         source = root.join("files", filename)
         dest   = destination.join(path, filename)
-        FileUtils.cp(source, dest)
-        logger.created(dest)
+
+        if dest.exist?
+          logger.exists(dest)
+        else
+          FileUtils.cp(source, dest)
+          logger.created(dest)
+        end
       end
 
       # Render an erb template at a specific path within
@@ -67,9 +72,14 @@ module Slickr
       #
       def template(filename, path)
         file = lib_file(with_correct_path_seperator(path))
-        file.dirname.mkpath
-        file.open("w+") { |f| f << render(template_root(filename)) }
-        logger.created(file)
+
+        if file.exist?
+          logger.exists(file)
+        else
+          file.dirname.mkpath
+          file.open("w+") { |f| f << render(template_root(filename)) }
+          logger.created(file)
+        end
       end
 
     private

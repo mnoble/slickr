@@ -2,8 +2,9 @@ module Slickr
   class ActionLogger
     PADDING = 14
     COLORS = {
-      :green => "\x1b[32m",
-      :reset => "\x1b[0m"
+      :green  => "\x1b[32m",
+      :orange => "\x1b[1;31m",
+      :reset  => "\x1b[0m"
     }
 
     attr_reader :out, :err
@@ -15,6 +16,10 @@ module Slickr
 
     def created(file)
       log color(:green, "create"), file
+    end
+
+    def exists(file)
+      log color(:orange, "exists"), file
     end
 
     private
